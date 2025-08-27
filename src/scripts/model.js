@@ -67,7 +67,30 @@ export class Model {
   resetFilter({ sortCategory, sortType, sortOrder, searchInput }) {
     sortCategory.value = "all";
     sortType.value = "name";
-    sortOrder.value = "asc";
+    sortOrder.value = "desc";
     searchInput.value = "";
+  }
+
+  updateURL({ sortCategory, sortType, sortOrder }) {
+    const urlParams = new URLSearchParams();
+    urlParams.set("sortCategory", sortCategory);
+    urlParams.set("sortType", sortType);
+    urlParams.set("sortOrder", sortOrder);
+
+    window.history.replaceState(null, null, `?${urlParams.toString()}`);
+  }
+
+  updateFromURL({ sortCategory, sortType, sortOrder }) {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const sortCategoryValue = urlParams.get("sortCategory") || "all";
+    const sortTypeValue = urlParams.get("sortType") || "price";
+    const sortOrderValue = urlParams.get("sortOrder") || "asc";
+
+    sortCategory.value = sortCategoryValue;
+    sortType.value = sortTypeValue;
+    sortOrder.value = sortOrderValue;
+
+    // window.history.replaceState(null, null, `?${urlParams.toString()}`);
   }
 }

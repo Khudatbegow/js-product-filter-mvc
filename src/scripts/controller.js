@@ -8,7 +8,9 @@ init();
 
 async function init() {
   await model.getData();
-  view.renderProducts(model.data);
+  const sortingElements = view.sortingElements();
+  model.updateFromURL(sortingElements);
+  sortProduct()
   setupEventListeners();
 }
 
@@ -24,6 +26,7 @@ function sortProduct() {
   const sortingValues = view.getSortingElementsValue();
   const sortingData = model.sortingProducts(sortingValues);
   view.renderProducts(sortingData);
+  model.updateURL(sortingValues);
 }
 
 function filterProducts() {
