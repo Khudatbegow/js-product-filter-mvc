@@ -1,13 +1,22 @@
 export class View {
   selectors = {
     productsList: "[data-js-products-list]",
+    searchInput: "[data-js-search-input]",
+    sortCategory: "[data-js-sort-category]",
+    sortType: "[data-js-sort-type]",
+    sortDirection: "[data-js-sort-direction]",
   };
 
   constructor() {
     this.productsList = document.querySelector(this.selectors.productsList);
+    this.searchInput = document.querySelector(this.selectors.searchInput);
+    this.sortCategory = document.querySelector(this.selectors.sortCategory);
+    this.sortType = document.querySelector(this.selectors.sortType);
+    this.sortDirection = document.querySelector(this.selectors.sortDirection);
   }
 
   renderProducts(products) {
+    this.productsList.innerHTML = "";
     products.forEach(({ id, subtitle, name, price, date }) => {
       const HTMLMarkup = `
          <li class="products__item">
@@ -24,5 +33,13 @@ export class View {
         `;
       this.productsList.insertAdjacentHTML("beforeend", HTMLMarkup);
     });
+  }
+
+  getSortingElementsValue() {
+    return {
+      sortCategory: this.sortCategory.value,
+      sortType: this.sortType.value,
+      sortOrder: this.sortDirection.value,
+    };
   }
 }
