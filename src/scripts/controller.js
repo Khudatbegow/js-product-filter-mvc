@@ -8,5 +8,5 @@ init();
 
 async function init() {
   await model.getData();
-  console.log(model.data);
+  view.renderProducts(model.data);
 }
