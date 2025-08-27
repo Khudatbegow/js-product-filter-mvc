@@ -5,6 +5,7 @@ export class View {
     sortCategory: "[data-js-sort-category]",
     sortType: "[data-js-sort-type]",
     sortDirection: "[data-js-sort-direction]",
+    resetButton: "[data-js-form-reset-button]",
   };
 
   constructor() {
@@ -13,6 +14,7 @@ export class View {
     this.sortCategory = document.querySelector(this.selectors.sortCategory);
     this.sortType = document.querySelector(this.selectors.sortType);
     this.sortDirection = document.querySelector(this.selectors.sortDirection);
+    this.resetButton = document.querySelector(this.selectors.resetButton);
   }
 
   renderProducts(products) {
@@ -40,6 +42,15 @@ export class View {
       sortCategory: this.sortCategory.value,
       sortType: this.sortType.value,
       sortOrder: this.sortDirection.value,
+    };
+  }
+
+  sortingElements() {
+    return {
+      sortCategory: this.sortCategory,
+      sortType: this.sortType,
+      sortOrder: this.sortDirection,
+      searchInput: this.searchInput,
     };
   }
 }

@@ -17,6 +17,7 @@ function setupEventListeners() {
   view.sortType.addEventListener("change", sortProduct);
   view.sortDirection.addEventListener("change", sortProduct);
   view.searchInput.addEventListener("input", filterProducts);
+  view.resetButton.addEventListener("click", resetForm);
 }
 
 function sortProduct() {
@@ -28,5 +29,11 @@ function sortProduct() {
 function filterProducts() {
   const inputValue = this.value.toLowerCase();
   model.filterSearch(inputValue);
+  sortProduct();
+}
+
+function resetForm() {
+  const sortingElements = view.sortingElements();
+  model.resetFilter(sortingElements);
   sortProduct();
 }

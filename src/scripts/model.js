@@ -63,4 +63,11 @@ export class Model {
 
     this.allData = this.data.filter((item) => item.name.toLowerCase().includes(inputValue));
   }
+
+  resetFilter({ sortCategory, sortType, sortOrder, searchInput }) {
+    sortCategory.value = "all";
+    sortType.value = "name";
+    sortOrder.value = "asc";
+    searchInput.value = "";
+  }
 }
