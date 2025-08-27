@@ -1,0 +1,57 @@
+:root {
+    /* === Colors === */
+    --color-primary: hsl(210, 29%, 24%);
+    --color-secondary: hsl(184, 6%, 53%);
+    --color-accent: hsl(204, 70%, 53%);
+    --color-success: hsl(145, 63%, 42%);
+    --color-danger: hsl(6, 78%, 57%);
+    --color-danger-hover: hsl(6, 63%, 46%);
+    --color-text: hsl(0, 0%, 20%);
+    --color-text-light: hsl(196, 7%, 42%);
+    --color-text-muted: hsl(184, 9%, 62%);
+    --color-bg: hsl(210, 17%, 98%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-border: hsl(0, 0%, 87%);
+    --color-border-light: hsl(0, 0%, 95%);
+    --color-shadow: hsla(0, 0%, 0%, 0.051);
+    --color-shadow-hover: hsla(0, 0%, 0%, 0.102);
+
+    /* === Spacing === */
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-15: 15px;
+    --spacing-20: 20px;
+    --spacing-25: 25px;
+    --spacing-30: 30px;
+
+    /* === Radius === */
+    --radius-6: 6px;
+    --radius-8: 8px;
+    --radius-10: 10px;
+
+    /* === Shadow === */
+    --shadow-sm: 0 2px 15px var(--color-shadow);
+    --shadow-md: 0 3px 10px var(--color-shadow);
+    --shadow-lg: 0 5px 20px var(--color-shadow-hover);
+
+    /* === Font Family === */
+    --font-family-base: 'Inter', 'Segoe UI', sans-serif;
+
+    /* === Font Size === */
+    --fs-14px: 0.9rem;
+    --fs-20px: 1.3rem;
+    --fs-22px: 1.4rem;
+    --fs-32px: 2rem;
+    --fs-40px: 2.5rem;
+
+    /* === Font Weight === */
+    --light: 300;
+    --medium: 500;
+    --semi-bold: 600;
+    --bold: 700;
+
+    /* === Others === */
+    --transition: all 0.3s ease;
+    --line-height: 1.6;
+    --letter-spacing: 0.5px;
+}
