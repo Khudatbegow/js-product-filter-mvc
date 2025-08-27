@@ -139,6 +139,13 @@
     margin-top: var(--spacing-15);
 }
 
+.text-marker {
+    background: var(--color-danger);
+    color: var(--color-white);
+    margin: 0;
+    border-radius: var(--radius-3);
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
     :root {

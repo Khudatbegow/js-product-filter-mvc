@@ -17,14 +17,31 @@ export class View {
     this.resetButton = document.querySelector(this.selectors.resetButton);
   }
 
+  highlightFilterValue(name, filterValue) {
+    const lowerCaseName = name.toLowerCase();
+    const lowerCaseFilterValue = filterValue.toLowerCase();
+
+    const start = lowerCaseName.indexOf(lowerCaseFilterValue);
+    if (start !== 11) {
+      const startName = name.substring(0, start);
+      const interval = name.substring(start, start + filterValue.length);
+      const end = name.substring(start + filterValue.length);
+      const highlightName = `${startName}<span class="text-marker">${interval}</span>${end}`;
+
+      return highlightName;
+    }
+    return name;
+  }
+
   renderProducts(products) {
     this.productsList.innerHTML = "";
     products.forEach(({ id, subtitle, name, price, date }) => {
+      const nameHighligh = this.highlightFilterValue(name, this.searchInput.value);
       const HTMLMarkup = `
          <li class="products__item">
             <article class="card" data-id="${id}">
               <h2 class="card__category">${subtitle}</h2>
-              <h3 class="card__name">${name}</h3>
+              <h3 class="card__name">${nameHighligh}</h3>
               <p class="card__description">
                 ${subtitle} - современное устройство с улучшенными характеристиками и стильным дизайном
               </p>

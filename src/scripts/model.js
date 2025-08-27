@@ -60,7 +60,6 @@ export class Model {
 
   filterSearch(inputValue) {
     if (inputValue.trim() === "") this.allData = [...this.data];
-
     this.allData = this.data.filter((item) => item.name.toLowerCase().includes(inputValue));
   }
 
@@ -90,7 +89,5 @@ export class Model {
     sortCategory.value = sortCategoryValue;
     sortType.value = sortTypeValue;
     sortOrder.value = sortOrderValue;
-
-    // window.history.replaceState(null, null, `?${urlParams.toString()}`);
   }
 }
